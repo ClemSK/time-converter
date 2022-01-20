@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { formatInTimeZone } from 'date-fns-tz';
+
 import moment from 'moment';
-import tz from 'moment-timezone';
-import { DateTime } from 'luxon';
 
 function App() {
   const [localTime, setLocalTime] = useState('');
@@ -19,59 +19,56 @@ function App() {
     setLocalTime(moment().format('LTS'));
     setLocalTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone);
 
-    const nyc = new DateTime.local().setZone('America/New_York');
-    const paris = new DateTime.local().setZone('Europe/Paris');
-    const shanghai = new DateTime.local().setZone('Asia/Shanghai');
-    const tokyo = new DateTime.local().setZone('Asia/Tokyo');
+    const date = new Date();
 
     setLocalNyc(
-      nyc.toLocaleString({
-        hour: 'numeric',
-        minute: '2-digit',
-      })
+      formatInTimeZone(date, 'America/New_York', 'yyyy-MM-dd HH:mm:ss zzz XXX')
     );
     setLocalTimeParis(
-      paris.toLocaleString({
-        hour: 'numeric',
-        minute: '2-digit',
-      })
+      formatInTimeZone(date, 'Europe/Paris', 'yyyy-MM-dd HH:mm:ss zzz XXX')
     );
     setLocalTimeShanghai(
-      shanghai.toLocaleString({
-        hour: 'numeric',
-        minute: '2-digit',
-      })
+      formatInTimeZone(date, 'Asia/Shanghai', 'yyyy-MM-dd HH:mm:ss zzz XXX')
     );
     setLocalTimeTokyo(
-      tokyo.toLocaleString({
-        hour: 'numeric',
-        minute: '2-digit',
-      })
+      formatInTimeZone(date, 'Asia/Tokyo', 'yyyy-MM-dd HH:mm:ss zzz XXX')
     );
   };
-
-  //   ? how to compare UTC to the local time
-
-  //  TODO 5 different locations to display, show the difference between them and GMT dynamically
-
-  //   TODO 5 simultaneous dynamic clocks
-
-  //  ? calculate difference between each clock
 
   useEffect(() => {
     setInterval(getLocalTime, 1000);
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header"></header>
-      <h1>Time Converter</h1>
-      <div>Local Time is: {localTime}</div>
-      <div>Time in NYC: {localNyc}</div>
-      <div>Time in Paris: {localTimeParis}</div>
-      <div>Time in Shanghai: {localTimeShanghai}</div>
-      <div>Time in Tokyo: {localTimeTokyo}</div>
-    </div>
+    <section className="section-container">
+      <div className="clocks-container">
+        <header className="App-header">
+          <h1>Time Converter</h1>
+        </header>
+        <div>
+          <div>
+            <div>{localTime}</div>
+            London
+          </div>
+          <div>
+            <div>{localTimeParis}</div>
+            Paris
+          </div>
+          <div>
+            <div>{localNyc}</div>
+            NYC
+          </div>
+          <div>
+            <div>{localTimeShanghai}</div>
+            Shanghai
+          </div>
+          <div>
+            <div>{localTimeTokyo}</div>
+            Tokyo
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

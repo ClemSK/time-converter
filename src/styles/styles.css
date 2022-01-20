@@ -1,0 +1,13 @@
+:root {
+  --font-shareTech: "Share Tech Mono", monospace;
+}
+
+body {
+  font-family: "Share Tech Mono", monospace;
+}
+
+.section-container {
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
