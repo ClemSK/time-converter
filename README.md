@@ -4,7 +4,7 @@
 
 To create a small but excellent time converter app which displays multiple times at the same time.
 I built something simple and contained to develop my knowledge of new technologies,
-as well as fully tested, accessible and responsive.
+as well as being fully tested, accessible and responsive.
 
 I will used the lessons learnt here to build larger scale apps with the same principles.
 
