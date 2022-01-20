@@ -16,7 +16,7 @@ I will used the lessons learnt here to build larger scale apps with the same pri
 ## To include
 
 - [x] Clocks
-- [ ] SASS
+- [x] SASS
 - [ ] Grid
 - [ ] TypeScript
 - [ ] GSAP scrolling animations
@@ -27,7 +27,7 @@ I will used the lessons learnt here to build larger scale apps with the same pri
 
 - [ ] alt text on images
 - [ ] Heading hierarchy
-- [ ] jump to content using main element
+- [ ] Jump to content using main element
 - [ ] Jump Straight to the Content Using the main Element
 - [ ] Wrap Content in the article Element
 - [ ] Make Screen Reader Navigation Easier with the header Landmark
