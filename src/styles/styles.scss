@@ -4,17 +4,28 @@
 
 body {
   font-family: 'Share Tech Mono', monospace;
-}
-
-.section-container {
-  text-align: center;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-content: center;
+  width: 90%;
+  max-width: 900px;
+  margin: 2em auto;
+  font: 0.9em/1.2 'Share Tech Mono', monospace;
 }
 
 .clocks-container {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-content: center;
+  display: grid;
+  grid-row: 3;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 10px;
+}
+
+header {
+  grid-column: 1/ 13;
+}
+
+footer {
+  grid-column: 1 / 13;
+  grid-row: 4;
+  border-radius: 5px;
+  padding: 10px;
 }

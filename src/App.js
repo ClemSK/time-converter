@@ -10,6 +10,9 @@ function App() {
   const [localTimeZone, setLocalTimeZone] = useState('');
 
   const [localNyc, setLocalNyc] = useState('');
+  const [localChicago, setLocalChicago] = useState('');
+  const [localDenver, setLocalDenver] = useState('');
+  const [localLosAngeles, setLocalLosAngeles] = useState('');
   const [localTimeParis, setLocalTimeParis] = useState('');
   const [localTimeShanghai, setLocalTimeShanghai] = useState('');
   const [localTimeTokyo, setLocalTimeTokyo] = useState('');
@@ -23,6 +26,19 @@ function App() {
 
     setLocalNyc(
       formatInTimeZone(date, 'America/New_York', 'yyyy-MM-dd HH:mm:ss zzz XXX')
+    );
+    setLocalChicago(
+      formatInTimeZone(date, 'America/Chicago', 'yyyy-MM-dd HH:mm:ss zzz XXX')
+    );
+    setLocalDenver(
+      formatInTimeZone(date, 'America/Denver', 'yyyy-MM-dd HH:mm:ss zzz XXX')
+    );
+    setLocalLosAngeles(
+      formatInTimeZone(
+        date,
+        'America/Los_Angeles',
+        'yyyy-MM-dd HH:mm:ss zzz XXX'
+      )
     );
     setLocalTimeParis(
       formatInTimeZone(date, 'Europe/Paris', 'yyyy-MM-dd HH:mm:ss zzz XXX')
@@ -41,11 +57,21 @@ function App() {
 
   return (
     <section className="section-container">
-      <div className="clocks-container">
+      <div class="container">
         <header className="App-header">
           <h1>Time Converter</h1>
         </header>
-        <div>
+
+        <aside>
+          <h2>Other things</h2>
+          <p>
+            Nam vulputate diam nec tempor bibendum. Donec luctus augue eget
+            malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus
+            ut, facilisis sed est.
+          </p>
+        </aside>
+
+        <div className="clocks-container">
           <div>
             <div>{localTime}</div>
             London
@@ -59,6 +85,18 @@ function App() {
             NYC
           </div>
           <div>
+            <div>{localChicago}</div>
+            Chicago
+          </div>
+          <div>
+            <div>{localDenver}</div>
+            Denver
+          </div>
+          <div>
+            <div>{localLosAngeles}</div>
+            Los Angeles
+          </div>
+          <div>
             <div>{localTimeShanghai}</div>
             Shanghai
           </div>
@@ -68,6 +106,7 @@ function App() {
           </div>
         </div>
       </div>
+      <footer>Link to source code</footer>
     </section>
   );
 }
