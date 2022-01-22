@@ -4,6 +4,10 @@ import { formatInTimeZone } from 'date-fns-tz';
 
 import moment from 'moment';
 
+interface localTime {
+  localTime: string;
+}
+
 function App() {
   const [localTime, setLocalTime] = useState('');
   const [localDay, setLocalDay] = useState('');
@@ -57,7 +61,7 @@ function App() {
 
   return (
     <section className="section-container">
-      <div class="container">
+      <div className="container">
         <header className="App-header">
           <h1>Time Converter</h1>
         </header>
@@ -70,7 +74,6 @@ function App() {
             ut, facilisis sed est.
           </p>
         </aside>
-
         <div className="clocks-container">
           <div>
             <div>{localTime}</div>
