@@ -18,7 +18,7 @@ I will used the lessons learnt here to build larger scale apps with the same pri
 - [x] Clocks
 - [x] SASS
 - [x] Grid
-- [ ] TypeScript
+- [x] TypeScript
 - [ ] GSAP scrolling animations
 - [ ] Jest + Cypress tests
 - [ ] Mobile responsive

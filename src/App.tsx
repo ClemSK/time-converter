@@ -4,22 +4,30 @@ import { formatInTimeZone } from 'date-fns-tz';
 
 import moment from 'moment';
 
-interface localTime {
-  localTime: string;
-}
-
 function App() {
-  const [localTime, setLocalTime] = useState('');
-  const [localDay, setLocalDay] = useState('');
-  const [localTimeZone, setLocalTimeZone] = useState('');
+  const [localTime, setLocalTime] = useState<string | undefined>(undefined);
+  const [localDay, setLocalDay] = useState<string | undefined>(undefined);
+  const [localTimeZone, setLocalTimeZone] = useState<string | undefined>(
+    undefined
+  );
 
-  const [localNyc, setLocalNyc] = useState('');
-  const [localChicago, setLocalChicago] = useState('');
-  const [localDenver, setLocalDenver] = useState('');
-  const [localLosAngeles, setLocalLosAngeles] = useState('');
-  const [localTimeParis, setLocalTimeParis] = useState('');
-  const [localTimeShanghai, setLocalTimeShanghai] = useState('');
-  const [localTimeTokyo, setLocalTimeTokyo] = useState('');
+  const [localNyc, setLocalNyc] = useState<string | undefined>(undefined);
+  const [localChicago, setLocalChicago] = useState<string | undefined>(
+    undefined
+  );
+  const [localDenver, setLocalDenver] = useState<string | undefined>(undefined);
+  const [localLosAngeles, setLocalLosAngeles] = useState<string | undefined>(
+    undefined
+  );
+  const [localTimeParis, setLocalTimeParis] = useState<string | undefined>(
+    undefined
+  );
+  const [localTimeShanghai, setLocalTimeShanghai] = useState<
+    string | undefined
+  >(undefined);
+  const [localTimeTokyo, setLocalTimeTokyo] = useState<string | undefined>(
+    undefined
+  );
 
   const getLocalTime = () => {
     setLocalDay(moment().format('dddd'));
@@ -29,7 +37,7 @@ function App() {
     const date = new Date();
 
     setLocalNyc(
-      formatInTimeZone(date, 'America/New_York', 'yyyy-MM-dd HH:mm:ss zzz XXX')
+      formatInTimeZone(date, 'America/New_York', 'HH:mm:ss dd-MM-yyyy zzz XXX')
     );
     setLocalChicago(
       formatInTimeZone(date, 'America/Chicago', 'yyyy-MM-dd HH:mm:ss zzz XXX')
